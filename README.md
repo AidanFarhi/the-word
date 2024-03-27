@@ -4,4 +4,4 @@ Build the image
 
 Run
 
-`docker run the-word `
+`docker run the-word`

@@ -9,8 +9,6 @@ func IndexHandler(w http.ResponseWriter, r *http.Request) {
 }
 
 func StaticHandler() http.Handler {
-	staticBaseDir := "/static/"
-	fullPath := "static"
-	handler := http.StripPrefix(staticBaseDir, http.FileServer(http.Dir(fullPath)))
+	handler := http.StripPrefix("/static/", http.FileServer(http.Dir("static")))
 	return handler
 }

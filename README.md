@@ -4,4 +4,4 @@ Build the image
 
 Run
 
-`docker run the-word`
+`docker run -p 9090:9090 the-word  `

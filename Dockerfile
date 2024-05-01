@@ -9,4 +9,5 @@ COPY --from=base /etc/ssl/certs/ca-certificates.crt /etc/ssl/certs/
 COPY --from=base /app /app
 COPY --from=base /src/views /views
 COPY --from=base /src/static /static
+COPY --from=base /src/js /js
 CMD [ "./app" ]

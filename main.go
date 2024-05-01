@@ -1,15 +1,16 @@
 package main
 
 import (
-	"fmt"
 	"net/http"
+	"the-word/handlers"
 )
 
-func hello(w http.ResponseWriter, req *http.Request) {
-	fmt.Fprintf(w, "hello\n")
+func registerHandlers() {
+	http.HandleFunc("/", handlers.IndexHandler)
+	http.Handle("/static/", handlers.StaticHandler())
 }
 
 func main() {
-	http.HandleFunc("/hello", hello)
+	registerHandlers()
 	http.ListenAndServe(":9090", nil)
 }
